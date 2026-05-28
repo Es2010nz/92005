@@ -1,0 +1,28 @@
+/* This aligns the image and buttons horizontally */
+.image-section {
+    display: flex;
+    justify-content: center; /* Centers the whole layout on the screen */
+    align-items: center;     /* Vertically aligns buttons with the center of the image */
+    gap: 30px;               /* Puts a 30px gap between the image and the buttons */
+    margin: 30px auto;       /* Adds spacing above and below the section */
+    max-width: 800px;
+}
+
+/* This keeps the buttons stacked vertically on the right side */
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;               /* Spacing between each button */
+}
+
+/* Base style for your buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 180px;
+    text-align: center;
+}

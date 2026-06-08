@@ -1,22 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Predator Free NZ – In Depth</title>
+    <title>Katiaki Zero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            background-color: #0f2f0f;
-            color: white;
             font-family: Arial, sans-serif;
-            padding: 40px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Layout Container */
+        .top-container {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            padding-top: 50px; /* Space for the top-left logo */
+        }
+
+        /* Profile/Logo Box */
+        .user-icon {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Restricts your logo image to a normal size without stretching */
+        .user-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+        }
+
+        /* Basic Large Top Box */
+        .hero-banner {
+            width: 100%;
+            height: 250px;
+            border: 1px solid #333;
+            background: #fff;
+        }
+
+        /* Row of Circles */
+        .circle-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+            padding: 0 20px;
+        }
+        .nav-circle {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #333;
+            border-radius: 50%;
+        }
+
+        /* Side-by-Side Content Container */
+        .book-container {
+            display: flex;
+            width: 100%;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        /* Basic Left and Right Split Columns */
+        .book-page {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+        }
+        .book-page.left {
+            border-right: 1px solid #333;
+        }
+        
+        /* Basic Inner Box Frame */
+        .page-img-placeholder {
+            width: 100px;
+            height: 80px;
+            border: 1px solid #333;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Content Text Mock Lines */
+        .text-line {
+            height: 6px;
+            background: #aaa;
+            margin-bottom: 8px;
+            border-radius: 2px;
+        }
+        .text-line.short { width: 50%; }
+        .text-line.medium { width: 75%; }
+        .text-line.long { width: 95%; }
+
+        /* Basic Bottom Box Frame */
+        .footer-box {
+            width: 100%;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 40px;
+            min-height: 120px;
+        }
+        .footer-link {
+            color: #0056b3;
+            text-decoration: underline;
+            font-size: 11px;
+            word-break: break-all;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile View Structure Overrides */
+        @media screen and (max-width: 600px) {
+            .book-container {
+                flex-direction: column;
+            }
+            .book-page.left {
+                border-right: none;
+                border-bottom: 1px solid #333;
+            }
         }
     </style>
 </head>
 <body>
 
-<h1>Predator Free NZ – In Depth</h1>
-<p>This is where detailed information will go.</p>
+    <div class="top-container">
+        
+        <!-- Connected to your CSS rules to properly frame your logo -->
+        <div class="user-icon">
+            <img src="Logo.png" alt="Logo">
+        </div>
 
-<a href="Homepage.html" style="color: #7fff7f;">← Back to Home</a>
+        <!-- Basic Big Top Box -->
+        <div class="hero-banner"></div>
+
+        <!-- Five Row Circle Layout Row -->
+        <div class="circle-navigation">
+            <div class="nav-circle"></div>
+            <div class="nav-circle"></div>
+            <div class="nav-circle"></div>
+            <div class="nav-circle"></div>
+            <div class="nav-circle"></div>
+        </div>
+
+        <!-- Basic Column Content Frame -->
+        <div class="book-container">
+            <!-- Left Side Page Column -->
+            <div class="book-page left">
+                <div class="page-img-placeholder"></div>
+                <div class="text-line medium"></div>
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line short"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+            </div>
+
+            <!-- Right Side Page Column -->
+            <div class="book-page right">
+                <div class="page-img-placeholder"></div>
+                <div class="text-line medium"></div>
+                <div class="text-line long"></div>
+                <div class="text-line short"></div>
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+            </div>
+        </div>
+
+        <!-- Bottom Base Footer Box -->
+        <div class="footer-box">
+            <a href="#" class="footer-link">Link: https://example.com</a>
+        </div>
+    </div>
 
 </body>
 </html>
+

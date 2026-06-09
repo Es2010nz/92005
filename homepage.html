@@ -1,149 +1,258 @@
 <!DOCTYPE html>
-<html> 
+<html lang="en"> 
 <head> 
-<title>Kaitiaki Zero</title> 
-<style> 
-body { 
-    background-image: url('Background.png'); 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    background-size: cover; 
-    margin: 0; 
-    padding: 40px 20px; 
-    font-family: Arial, sans-serif; 
-    color: #ffffff; 
-} 
-.logo { 
-    position: fixed; 
-    top: 20px; 
-    left: 20px; 
-    width: 120px; 
-} 
-h1 { 
-    text-align: center; 
-    margin-top: 40px; 
-    margin-bottom: 10px; 
-} 
-h2 { 
-    text-align: center; 
-    margin-top: 0; 
-    margin-bottom: 40px; 
-} 
-.image-section { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 30px; 
-    margin: 30px auto; 
-    max-width: 800px; 
-} 
+    <meta charset="UTF-8">
+    <title>Kaitiaki Zero</title> 
+    <style> 
+        /* Global Page Settings - Restored original full-screen background image */
+        body { 
+            background-image: url('Background.png'); 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            background-size: cover; 
+            margin: 0; 
+            padding: 40px 20px; 
+            font-family: Arial, sans-serif; 
+            color: #ffffff; 
+        } 
 
-.image-display-box img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; 
-} 
+        /* Logo element fixed to the top-left corner exactly like your old code */
+        .logo { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            width: 120px; 
+            z-index: 1000; 
+        } 
 
-.button-column { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-} 
+        /* Main Section Header */
+        .main-heading-group {
+            max-width: 1100px;
+            margin: 40px auto;
+        }
 
-.btn { 
-    padding: 16px 32px;       
-    border: none; 
-    border-radius: 6px;       
-    font-size: 18px;          
-    font-weight: bold;
-    cursor: pointer; 
-    text-decoration: none; 
-    transition: background 0.3s; 
-    width: 220px;             
-    text-align: center; 
-} 
+        h1 { 
+            text-align: left; 
+            margin: 0 0 10px 0; 
+            font-size: 32px;
+        } 
 
-.btn:hover { 
-    background-color: #008c4a;  
-    color: white; 
-}
+        h2 { 
+            text-align: left; 
+            margin: 0; 
+            font-size: 18px;
+            color: #e0e0e0;
+            font-weight: normal;
+        } 
 
-.video-container { 
-    position: relative; 
-    padding-bottom: 56.25%; 
-    height: 0; 
-    overflow: hidden; 
-    max-width: 1400px; 
-    margin: 40px auto; 
-    border-radius: 8px; 
-    box-shadow: 0px 4px 15px rgba(46, 102, 32, 0.5); 
-} 
+        /* TOP SECTION: Expanded container to let images look large while maintaining wireframe flow */
+        .image-section { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: stretch; /* Stretches columns to equal height for perfect wireframe balance */
+            gap: 30px; 
+            margin: 30px auto; 
+            max-width: 1100px; 
+        } 
 
-.video-container iframe { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    border: 0; 
-} 
-</style> 
+        /* Left Side: Buttons Column matching wireframe structure */
+        .button-column { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+        } 
+
+        /* Your original button styling */
+        .btn { 
+            padding: 16px 32px;       
+            border: none; 
+            border-radius: 6px;       
+            font-size: 18px;          
+            font-weight: bold;
+            cursor: pointer; 
+            text-decoration: none; 
+            transition: background 0.3s; 
+            width: 220px;             
+            text-align: center; 
+            color: #ffffff; 
+            background-color: transparent; 
+        } 
+
+        /* Your original hover behavior */
+        .btn:hover { 
+            background-color: #008c4a;  
+            color: white; 
+        }
+
+        /* Standardize background for the sidebar dynamic triggers */
+        .button-column .btn {
+            background-color: rgba(255, 255, 255, 0.15); 
+            color: #ffffff;
+        }
+        .button-column .btn:hover {
+            background-color: #008c4a;
+        }
+
+        /* FIXED: Image container is given a large, explicit space to prevent page layout shifting */
+        .image-display-box {
+            flex: 1.3;               /* Grants the image box extra priority share of the screen */
+            max-width: 520px;
+            height: 380px;            /* Set vertical box boundaries */
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* FIXED: Cover style fills out container perfectly without causing aspect ratio stretching */
+        .image-display-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        } 
+
+        /* Right Side: Text Area matching 'Heading1' & 'Heading2' wireframe columns */
+        .wireframe-text-sidebar {
+            flex: 1;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Evenly breaks up content blocks vertically */
+        }
+
+        .text-block h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            padding-bottom: 4px;
+        }
+
+        .text-block p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* MIDDLE SECTION: Large Banner Layout Area aligned with text copy margins */
+        .image-block { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+        } 
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Text copy running underneath the banner image layout - Kept readable and normal */
+        .body-description {
+            max-width: 1100px;
+            margin: 20px auto;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+        /* BOTTOM SECTION: Video Player Area matching standard dimensions */
+        .video-container { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            border: 2px solid #ffffff;
+            aspect-ratio: 16 / 9; 
+            border-radius: 4px;
+            overflow: hidden;
+        } 
+
+        .video-container iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        } 
+
+        /* Call To Action button styles located at footer base */
+        .footer-action {
+            text-align: center; 
+            margin: 40px 0;
+        }
+    </style> 
 </head> 
 <body> 
 
-<img src="Logo.png" class="logo" alt="Predator Free NZ Logo"> 
+    <!-- Fixed Top-Left Logo -->
+    <img src="Logo.png" class="logo" alt="Predator Free NZ Logo"> 
 
-<h1>"Kaitiaki Zero"</h1> 
-<h2>Eliminating predators, restoring balance.</h2> 
-
-<div class="image-section"> 
-    
-    <div class="image-display-box">
-        <img id="dynamic-image" src="Stoat and tui.png" alt="First Image">
-    </div>
-    
-    <div class="button-column">
-        <button class="btn" onclick="showImage('Stoat and tui.png', 'First Image Description')">Stoat killing Tui</button>
-        <button class="btn" onclick="showImage('three predetors.png', 'Second Image Description')">three big predetors</button>
-        <button class="btn" onclick="showImage('Rat trap.png', 'Third Image Description')">Rat in Rat trap</button>
-        <button class="btn" onclick="showImage('Ferret.png', 'fourth Image Description')">Ferret</button>
-    
+    <!-- Header Section -->
+    <div class="main-heading-group">
+        <h1>"Kaitiaki Zero"</h1> 
+        <h2>Eliminating predators, restoring balance.</h2> 
     </div>
 
-</div>
+    <!-- Top Section: Buttons, Main Image, Side Text -->
+    <div class="image-section"> 
+        
+        <!-- Left Side: Interactive Buttons Column -->
+        <div class="button-column">
+            <button class="btn" onclick="showImage('Stoat and tui.png', 'First Image Description')">Stoat killing Tui</button>
+            <button class="btn" onclick="showImage('three predetors.png', 'Second Image Description')">three big predetors</button>
+            <button class="btn" onclick="showImage('Rat trap.png', 'Third Image Description')">Rat in Rat trap</button>
+            <button class="btn" onclick="showImage('Ferret.png', 'fourth Image Description')">Ferret</button>
+        </div>
+        
+        <!-- Center: Swappable Dynamic Image Box -->
+        <div class="image-display-box">
+            <img id="dynamic-image" src="Stoat and tui.png" alt="First Image">
+        </div>
 
-<script> 
-function showImage(imageSrc, altText) { 
-    var imgElement = document.getElementById('dynamic-image'); 
-    imgElement.src = imageSrc; 
-    imgElement.alt = altText; 
-} 
-</script> 
+        <!-- Right Side: Heading 1 & Heading 2 text boxes from the wireframe -->
+        <div class="wireframe-text-sidebar">
+            <div class="text-block">
+                <h3>Our Core Mission</h3>
+                <p>Protecting vulnerable native bird populations from invasive threats using modern trapping techniques and deep community coordination.</p>
+            </div>
+            <div class="text-block">
+                <h3>Restoring Native Ecosystems</h3>
+                <p>Bringing back natural birdsong, balancing insect populations, and allowing unique native flora to recover permanently.</p>
+            </div>
+        </div>
 
-<div class="image-block" style="text-align: center; margin: 20px 0;"> 
-    <img src="Graph 1.png" alt="Survey Graph"> 
-</div> 
+    </div>
 
-<p style="text-align: center; word-wrap: break-word;">
--------------------------------------------------------------.--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-</p> 
+    <!-- Middle Section: Survey Graph Banner Place -->
+    <div class="image-block"> 
+        <img src="Graph 1.png" alt="Survey Graph"> 
+    </div> 
 
-<div class="video-container"> 
-    <iframe title="vimeo-player" src="https://player.vimeo.com/video/465168294?h=974f1c53df" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-</div> 
+    <!-- Content Narrative text -->
+    <p class="body-description">
+        Our latest conservation field data highlights clear metrics surrounding local volunteer engagement, regional trap capture frequencies, and the progressive bounceback indices of native wildlife markers across monitoring sanctuaries.
+    </p> 
 
-<p>------------------------</p> 
-<div style="text-align:center; margin-top:40px;">
-    <a href="predatorfree-indepth.html" 
-       class="btn" 
-       style="background:#008c4a;">
-        Learn More (In‑Depth Page)
-    </a>
-</div>
+    <!-- Bottom Section: Video Player Component Frame -->
+    <div class="video-container"> 
+        <iframe<iframe title="vimeo-player" src="https://player.vimeo.com/video/465168294?h=974f1c53df" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe> 
+    </div> 
 
-</div>
+    <!-- Lower Level Call To Action navigation link (Keeps its original inline background color) -->
+    <div class="footer-action">
+        <a href="predatorfree-indepth.html" class="btn" style="background:#008c4a;">Learn More (In‑Depth Page)</a>
+    </div>
 
-<p>------------------------</p> 
+    <!-- Image script logic function triggers -->
+    <script> 
+    function showImage(imageSrc, altText) { 
+        var imgElement = document.getElementById('dynamic-image'); 
+        imgElement.src = imageSrc; 
+        imgElement.alt = altText; 
+    } 
+    </script> 
 
 </body> 
 </html>

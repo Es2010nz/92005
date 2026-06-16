@@ -1,238 +1,310 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en"> 
 <head> 
- <meta charset="UTF-8"> 
- <title>Kaitiaki Zero</title> 
- <style> 
- body { 
- background-image: url('Background.png'); 
- background-repeat: no-repeat; 
- background-attachment: fixed; 
- background-size: cover; 
- margin: 0; 
- padding: 40px 20px; 
- font-family: Arial, sans-serif; 
- color: #ffffff; 
- } 
- .logo { 
- position: fixed; 
- top: 20px; 
- left: 20px; 
- width: 120px; 
- z-index: 1000; 
- } 
- /* Header */ 
- header { 
- padding: 40px; 
- text-align: center; 
- background: #422a61; 
- color: white; 
- margin-bottom: 20px; 
- } 
- .header-btn { 
- position: absolute; 
- top: 40px; /* Distance from the top edge of the header */ 
- right: 20px; /* Distance from the right edge of the header */ 
- width: auto; /* Allows the button width to fit its text content */ 
- padding: 10px 20px; /* Optional: Makes it slightly smaller than your giant sidebar buttons */ 
- background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent style */ 
- } 
- /* Main Section Header */ 
- .main-heading-group { 
- max-width: 1100px; 
- margin: 40px auto; 
- } 
- h1 { 
- text-align: left; 
- margin: 0 0 10px 0; 
- font-size: 32px; 
- } 
- h2 { 
- text-align: left; 
- margin: 0; 
- font-size: 18px; 
- color: #e0e0e0; 
- font-weight: normal; 
- } 
- .image-section { 
- display: flex; 
- justify-content: space-between; 
- align-items: flex-end; 
- gap: 30px; 
- margin: 30px auto 0 auto; 
- max-width: 1100px; 
- } 
- .button-column { 
- display: flex; 
- flex-direction: column; 
- gap: 15px; 
- flex-shrink: 0; 
- } 
- .btn { 
- padding: 16px 32px; 
- border: none; 
- border-radius: 6px; 
- font-size: 18px; 
- font-weight: bold; 
- cursor: pointer; 
- text-decoration: none; 
- transition: background 0.3s; 
- width: 220px; 
- text-align: center; 
- color: #ffffff; 
- background-color: transparent; 
- } 
- .btn:hover { 
- background-color: #008c4a; 
- color: white; 
- } 
- /* Standardize background for the sidebar dynamic triggers */ 
- .button-column .btn { 
- background-color: rgba(255, 255, 255, 0.15); 
- color: #ffffff; 
- } 
- .button-column .btn:hover { 
- background-color: #008c4a; 
- } 
- .image-display-box img { 
- width: 100%; 
- height: 100%; 
- object-fit: contain; /* Changed from cover to contain so the whole image fits without cropping */ 
- } 
- /* Right Side: Text Area matching 'Heading1' & 'Heading2' wireframe columns */ 
- .wireframe-text-sidebar { 
- width: 380px; 
- flex-shrink: 0; 
- display: flex; 
- flex-direction: column; 
- justify-content: space-between; 
- } 
- .text-block h3 { 
- margin: 0 0 8px 0; 
- font-size: 20px; 
- color: #ffffff; 
- border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
- padding-bottom: 4px; 
- } 
- .text-block p { 
- margin: 0; 
- font-size: 14px; 
- line-height: 1.6; 
- color: #e0e0e0; 
- } 
- /* MIDDLE SECTION: Large Banner Layout Area aligned with text copy margins */ 
- .image-block { 
- max-width: 1100px; 
- margin: 0 auto 40px auto; 
- border: 2px solid #ffffff; 
- border-radius: 4px; 
- } 
- .image-block img { 
- width: 100%; 
- height: auto; 
- display: block; 
- } 
- .body-description { 
- max-width: 1100px; 
- margin: 20px auto; 
- font-size: 15px; 
- line-height: 1.7; 
- color: #ffffff; 
- } 
- /* BOTTOM SECTION: Video Player Area matching standard dimensions */ 
- .video-container { 
- max-width: 1100px; 
- margin: 40px auto; 
- border: 2px solid #ffffff; 
- aspect-ratio: 16 / 9; 
- border-radius: 4px; 
- overflow: hidden; 
- } 
- .video-container iframe { 
- width: 100%; 
- height: 100%; 
- border: 0; 
- } 
- /* Call To Action button styles located at footer base */ 
- .footer-action { 
- text-align: center; 
- margin: 40px 0; 
- } 
- </style> 
- <html lang="en"> 
-    <head> 
-        <meta charset="UTF-8"> 
-        <title>Kaitiaki Zero</title> 
-        <link rel="stylesheet" href="style.css">
-    </head> 
-    <body> 
-    
-        <img src="Logo.png" class="logo" alt="Predator Free NZ Logo"> 
-    
-        <!-- Header --> 
-        <header> 
-            <h1>First page explanation</h1> 
-            <p>This first page will go over why and how New Zealand's endemic species are affected by introduced predators</p> 
-            <button class="btn header-btn">Header Button</button> 
-        </header> 
-    
-        <!-- Header Section --> 
-        <div class="main-heading-group"> 
-            <h1>"Kaitiaki Zero"</h1> 
-            <h2>Eliminating predators, restoring balance.</h2> 
-            <h3>Predator Free New Zealand is a nationwide mission to remove three major introduced predators — rats, stoats, and possums — by 2050. These predators threaten Aotearoa’s unique wildlife, killing millions of native birds, insects, and lizards every year. The goal is simple: restore the natural balance so species like kiwi, kākā, and kererū can thrive again. 
-            At the heart of this movement is kaitiakitanga — the Māori principle of guardianship and caring for the environment. Predator Free NZ reflects this value by encouraging communities, iwi, landowners, and volunteers to work together to protect the whenua and the taonga species that live on it. Thousands of people across the country run backyard traps, support local reserves, and help rebuild healthy ecosystems, we at Katiaki Zero want to help with this goal.</h3> 
-        </div> 
-    
-        <!-- Top Section: Buttons, Main Image, Side Text --> 
-        <div class="image-section"> 
-    
-            <!-- Left Side: Interactive Buttons Column --> 
-            <div class="button-column"> 
-                <button class="btn" onclick="showimage('Stoat and tui.png', 'First Image Description', 'Stoat', 'Stoats are widely regarded as the single most devastating introduced predator to New Zealand’s native wildlife. Originally brought from Europe in the late 1800s to control a rabbit plague, they quickly turned their attention to the country\'s defenceless endemic birds, which had evolved for millions of years without mammalian predators. Because stoats are incredibly agile climbers, fast runners, and strong swimmers, they can easily access any habitat to raid nests. They are relentless, voracious hunters that engage in &quot;surplus killing&quot;—slaughtering an entire nest of birds or eggs far beyond what they need to eat. Today, stoats are the primary reason why 95% of wild-hatched kiwi chicks die before reaching adulthood, and they have already driven iconic species like the South Island bush wren and the laughing owl to total extinction.', 'Eradication', 'To eradicate stoats, New Zealanders are taking aggressive action through the national Predator Free 2050 initiative. Conservation groups and volunteers maintain vast networks of humane kill traps, like the DOC200, using eggs and meat as bait. Experts also deploy scented tracking dogs to find hidden dens and use aerial drops of 1080 poison to clear rugged, inaccessible backcountry. Thanks to these combined efforts, numerous offshore islands are now entirely stoat-free sanctuaries.')">Stoat killing Tui</button> 
-                <button class="btn" onclick="showimage('Ferret.png', 'Second Image Description', 'Ferret', 'Ferrets are the largest mustelid species introduced to New Zealand. Brought over to hunt rabbits, they quickly expanded into native forest and pastoral zones. They present a major predatory threat to kiwi chicks, nesting native birds, and indigenous reptile colonies across the country.', 'Control Methods', 'Management lines heavily rely on DOC250 kill trap tracking paths, footprint tracking tunnels, and coordinated regional council containment initiatives alongside pastoral border zones.')">Ferret</button> 
-                <button class="btn" onclick="showimage('Weasal.png', 'Third Image Description', 'Weasel', 'Weasels are the smallest and least common mustelids introduced to New Zealand, yet they remain highly efficient hunters. They primarily target small lizards, birds, and insects, successfully entering narrow nesting holes that larger predators cannot fit into.', 'Management', 'Weasels are caught locally using standard DOC200 trap enclosures. Targeted exclusion zones and micro-trapping lines protect highly sensitive indigenous skink and gecko sanctuaries.')">Weasel</button> 
-                <button class="btn" onclick="showimage('possum.png', 'Fourth Image Description', 'Possum', 'Introduced from Australia in 1837, brush-tailed possums devastate indigenous New Zealand forests. They eat out the choice canopy growth like rātā and kāmahi, while also aggressively raiding native bird nests to consume vulnerable eggs and young chicks.', 'Forest Defense', 'Eradication frameworks utilize expansive networks of automated bait stations, tree-mounted kill traps, and regional aerial control runs to protect the native canopy.')">Possum</button> 
-                <button class="btn" onclick="showimage('Rat trap.png', 'fifth Image Description', 'Rat', 'Rats are widespread throughout forest, rural, and urban landscapes. They are voracious predators of native seeds, insects, lizards, and small bird eggs, causing substantial ecosystem damage and heavily impacting native nesting successes.', 'Urban Frontlines', 'Community backyard trapping projects form the core defense against rats. Volunteers utilize standard snap traps placed inside safety tunnels to protect pets and children.')">Rat</button> 
-                <button class="btn" onclick="showimage('Wild cat.png', 'sixth Image Description', 'Wild cat', 'Feral cats are highly efficient apex predators found in almost every habitat type across New Zealand. They relentlessly hunt native birds, lizards, and insects, having a massive predatory footprint across open alpine zones and dense forest floors alike.', 'Sanctuary Safety', 'Feral cats are strictly managed using live-capture cage traps, predator-exclusion boundary fencing, and trail camera tracking near key wildlife sanctuaries.')">Wild cat</button> 
-                <button class="btn" onclick="showimage('Wild dog.png', 'seventh Image Description', 'Wild dog', 'Roaming dogs pose an immediate danger to vulnerable, ground-dwelling kiwi populations. Kiwi lack a strong breastbone structure, meaning even a single playful bite from a loose dog can cause fatal internal crushing injuries.', 'Canine Control', 'Advocacy programs encourage strict avian-awareness training for hunting dogs, alongside mandatory leash enforcement parameters inside active conservation reserves.')">Wild dog</button> 
-                <button class="btn" onclick="showimage('Hedgehog.png', 'eighth Image Description', 'Hedgehog', 'Hedgehogs are surprisingly destructive to New Zealand\'s ground ecosystems. They eat vast quantities of native invertebrates, including rare wētā, and frequently raid ground-nesting shorebird colonies to eat eggs and hatchlings.', 'Ground Ecosystems', 'Hedgehogs are systematically removed using DOC150 or DOC200 trap setups positioned along coastal dune margins and forest boundaries.')">Hedgehog</button> 
-            </div> 
-    
-            <!-- Center: Swappable Dynamic Image Box --> 
-            <div class="image-display-box"> 
-                <img id="dynamic-image" src="Stoat and tui.png" alt="First Image"> 
-            </div> 
-    
+    <meta charset="UTF-8">
+    <title>Kaitiaki Zero</title> 
+    <style> 
+        /* Global Page Settings - Restored original full-screen background image */
+ 
+        body { 
+            background-image: url('Background.png'); 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            background-size: cover; 
+            margin: 0; 
+            padding: 40px 20px; 
+            font-family: Arial, sans-serif; 
+            color: #ffffff; 
+            color: #ffffff;
+        }  
+        /* Header */
+        header {
+            padding: 40px;
+            text-align: center;
+            background: #422a61;
+            color: white;    
+            margin-bottom: 20px;
+        } 
 
-            <div class="wireframe-text-sidebar"> 
-                <div class="text-block"> 
-                    <h3 id="sidebar-title-1">Stoat</h3> 
-                    <p id="sidebar-desc-1">Stoats are widely regarded as the single most devastating introduced predator to New Zealand’s native wildlife. Originally brought from Europe in the late 1800s to control a rabbit plague, they quickly turned their attention to the country's defenceless endemic birds, which had evolved for millions of years without mammalian predators. Because stoats are incredibly agile climbers, fast runners, and strong swimmers, they can easily access any habitat to raid nests. They are relentless, voracious hunters that engage in "surplus killing"—slaughtering an entire nest of birds or eggs far beyond what they need to eat. Today, stoats are the primary reason why 95% of wild-hatched kiwi chicks die before reaching adulthood, and they have already driven iconic species like the South Island bush wren and the laughing owl to total extinction.</p> 
-                </div> 
-                <div class="text-block"> 
-                    <h3 id="sidebar-title-2">Eradication</h3> 
-                    <p id="sidebar-desc-2">To eradicate stoats, New Zealanders are taking aggressive action through the national Predator Free 2050 initiative. Conservation groups and volunteers maintain vast networks of humane kill traps, like the DOC200, using eggs and meat as bait. Experts also deploy scented tracking dogs to find hidden dens and use aerial drops of 1080 poison to clear rugged, inaccessible backcountry. Thanks to these combined efforts, numerous offshore islands are now entirely stoat-free sanctuaries.</p> 
-                </div> 
-            </div> 
+        /* Logo element fixed to the top-left corner exactly like your old code */
+        .header-btn {
+           position: absolute;
+            top: 40px;          /* Distance from the top edge of the header */
+           right: 20px;        /* Distance from the right edge of the header */
+           width: auto;        /* Allows the button width to fit its text content */
+           padding: 10px 20px; /* Optional: Makes it slightly smaller than your giant sidebar buttons */
+           background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent style */
+}
     
-        </div> 
-    
+        .logo { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            width: 120px; 
+            z-index: 1000; 
+        } 
 
-        <div class="image-block"> 
-            <img src="Graph 1.png" alt="Survey Graph"> 
-        </div> 
-    
-       
-        <p class="body-description"> 
-            Our latest conservation field data highlights clear metrics surrounding local volunteer engagement, regional trap capture frequencies, and the progressive bounceback indices of native wildlife markers across monitoring sanctuaries. 
-        </p> 
-    
+        /* Main Section Header */
+        .main-heading-group {
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        h1 { 
+            text-align: left; 
+            margin: 0 0 10px 0; 
+            font-size: 32px;
+        } 
+
+        h2 { 
+            text-align: left; 
+            margin: 0; 
+            margin: 0 0 20px 0; 
+            font-size: 18px;
+            color: #e0e0e0;
+            font-weight: normal;
+        } 
+
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        /* TOP SECTION: Expanded container to let images look large while maintaining wireframe flow */
+        .image-section { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: stretch; /* Stretches columns to equal height for perfect wireframe balance */
+            gap: 30px; 
+            margin: 30px auto; 
+            max-width: 1100px; 
+        } 
+
+        /* Left Side: Buttons Column matching wireframe structure */
+        .button-column { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+        } 
+
+        /* Your original button styling */
+        .btn { 
+            padding: 16px 32px;       
+            border: none; 
+            border-radius: 6px;       
+            font-size: 18px;          
+            font-weight: bold;
+            cursor: pointer; 
+            text-decoration: none; 
+            transition: background 0.3s; 
+            width: 220px;             
+            text-align: center; 
+            color: #ffffff; 
+            background-color: transparent; 
+        } 
+
+        /* Your original hover behavior */
+     
+        .btn:hover { 
+            background-color: #008c4a;  
+            color: white; 
+        }
+
+        /* Standardize background for the sidebar dynamic triggers */
+        .button-column .btn {
+            background-color: rgba(255, 255, 255, 0.15); 
+            color: #ffffff;
+        }
+        .button-column .btn:hover {
+            background-color: #008c4a;
+        }
+
+        /* FIXED: Image container is given a large, explicit space to prevent page layout shifting */
+        .image-display-box {
+            flex: 1.3;               /* Grants the image box extra priority share of the screen */
+            flex: 1.3;              
+            max-width: 520px;
+            height: 380px;            /* Set vertical box boundaries */
+            height: 380px;           
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* FIXED: Cover style fills out container perfectly without causing aspect ratio stretching */
         
-        <div class="video-container"> 
-            <iframe title="vimeo-player" src="https://player.vimeo.com/video/465168294?h=974f1c53df" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+        .image-display-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        } 
 
+        /* Right Side: Text Area matching 'Heading1' & 'Heading2' wireframe columns */
+        .wireframe-text-sidebar {
+            flex: 1;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Evenly breaks up content blocks vertically */
+            justify-content: flex-start; 
+            gap: 20px;
+        }
 
-        <div class="footer-action"> 
-            <a href="predatorfree-indepth.html" class="btn" style="background:#008c4a;">Learn More (In‑Depth Page)</a> 
+        .text-block h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            padding-bottom: 4px;
+        }
+
+        .text-block p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* MIDDLE SECTION: Large Banner Layout Area aligned with text copy margins */
+        .image-block { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+        } 
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Text copy running underneath the banner image layout - Kept readable and normal */
+        .body-description {
+            max-width: 1100px;
+            margin: 20px auto;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+        /* BOTTOM SECTION: Video Player Area matching standard dimensions */
+        .video-container { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            border: 2px solid #ffffff;
+            aspect-ratio: 16 / 9; 
+            border-radius: 4px;
+            overflow: hidden;
+        } 
+
+        .video-container iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        } 
+
+        /* Call To Action button styles located at footer base */
+        .footer-action {
+            text-align: center; 
+            margin: 40px 0;
+        }
+    </style> 
+</head> 
+<body> 
+
+    <!-- Fixed Top-Left Logo -->
+
+    <img src="Logo.png" class="logo" alt="Predator Free NZ Logo"> 
+
+    
+    <!-- Header -->
+<header>
+    <h1>First page explanation</h1>
+    <p>This first page will go over why and how New Zealand's endemic species are affected by introduced predators</p>
+    
+    <button class="btn header-btn">Header Button</button>
+</header>
+
+    <!-- Header Section -->
+    <div class="main-heading-group">
+        <h1>"Kaitiaki Zero"</h1> 
+        <h2>Eliminating predators, restoring balance.</h2> 
+        <h3>Predator Free New Zealand is a nationwide mission to remove three major introduced predators — rats, stoats, and possums — by 2050. These predators threaten Aotearoa’s unique wildlife, killing millions of native birds, insects, and lizards every year. The goal is simple: restore the natural balance so species like kiwi, kākā, and kererū can thrive again. 
+            At the heart of this movement is kaitiakitanga — the Māori principle of guardianship and caring for the environment. Predator Free NZ reflects this value by encouraging communities, iwi, landowners, and volunteers to work together to protect the whenua and the taonga species that live on it. Thousands of people across the country run backyard traps, support local reserves, and help rebuild healthy ecosystems, we at Katiaki Zero want to help with this goal.</h3>
+            </div>
+
+    <!-- Top Section: Buttons, Main Image, Side Text -->
+    <div class="image-section"> 
+
+        <!-- Left Side: Interactive Buttons Column -->
+        <div class="button-column">
+            <button class="btn" onclick="showImage('Stoat and tui.png', 'First Image Description')">Stoat killing Tui</button>
+            <button class="btn" onclick="showImage('Ferret.png', 'Second Image Description')">Ferret</button>
+            <button class="btn" onclick="showImage('Weasal.png', 'Third Image Description')">Weasal</button>
+            <button class="btn" onclick="showImage('possum.png', 'Fourth Image Description')">Possum</button>
+            <button class="btn" onclick="showImage('Rat trap.png', 'fifth Image Description')">Rat</button>
+            <button class="btn" onclick="showImage('Wild cat.png', 'sixth Image Description')">Wild cat</button>
+            <button class="btn" onclick="showImage('Wild dog.png', 'seventh Image Description')">Wild dog</button>
+            <button class="btn" onclick="showImage('Hedgehog.png', 'eighth Image Description')">Hedgehog</button>
+        
         </div>
+
+        <!-- Center: Swappable Dynamic Image Box -->
+        <!-- Center: Interactive Image Container Box -->
+        <div class="image-display-box">
+            <img id="dynamic-image" src="Stoat and tui.png" alt="First Image">
+        </div>
+
+        <!-- Right Side: Heading 1 & Heading 2 text boxes from the wireframe -->
+        <!-- Right Side: Dynamic Content Sidebar Blocks -->
+        <div class="wireframe-text-sidebar">
+            <div class="text-block">
+                <h4>Stoats</h4>
+                <p>Introduced to New Zealand in the late 1800s to control rabbits, stoats are now fierce, relentless predators that are the primary threat to native kiwi chicks and other vulnerable bird species</p>
+
+                <h4 id="Ferret">Stoat Threat</h4>
+                <p id="sidebar-desc">Stoats are incredibly agile hunters that pose an existential threat to New Zealand's native tree-dwelling birds.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Middle Section: Survey Graph Banner Place -->
+    <div class="image-block"> 
+        <img src="Graph 1.png" alt="Survey Graph"> 
+    </div> 
+
+    <!-- Content Narrative text -->
+    <p class="body-description">
+        Our latest conservation field data highlights clear metrics surrounding local volunteer engagement, regional trap capture frequencies, and the progressive bounceback indices of native wildlife markers across monitoring sanctuaries.
+    </p> 
+
+    <!-- Bottom Section: Video Player Component Frame -->
+    <div class="video-container"> 
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/465168294?h=974f1c53df" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+    </div> 
+
+    <!-- Lower Level Call To Action navigation link (Keeps its original inline background color) -->
+    <div class="footer-action">
+        <a href="predatorfree-indepth.html" class="btn" style="background:#008c4a;">Learn More (In‑Depth Page)</a>
+
+    <!-- Image script logic function triggers -->
+    <script> 
+    function showImage(imageSrc, altText) { 
+        var imgElement = document.getElementById('dynamic-image'); 
+        imgElement.src = imageSrc; 
+        imgElement.alt = altText; 
+    } 
+    </script> 
+
+</body> 
+</html>
+    <div class="body-description">
